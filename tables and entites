@@ -1,0 +1,38 @@
+Patient Table
+
+Entity: Patient
+Attributes: Patient_ID, Name, Age, Gender, Address, Phone_Number, Medical_History, Insurance_Details
+Doctor Table
+
+Entity: Doctor
+Attributes: Doctor_ID, Name, Specialty, Qualification, Contact_Info, Availability
+Appointments Table
+
+Entity: Appointment
+Attributes: Appointment_ID, Patient_ID (FK), Doctor_ID (FK), Date, Time, Reason_For_Visit, Status
+Billing Table
+
+Entity: Billing
+Attributes: Bill_ID, Patient_ID (FK), Service_Description, Amount, Payment_Status, Payment_Date
+Inventory Table
+
+Entity: Inventory_Item
+Attributes: Item_ID, Name, Description, Quantity, Price, Expiry_Date, Supplier
+Staff Table
+
+Entity: Staff
+Attributes: Staff_ID, Name, Role, Contact_Info, Department, Shift_Timings, Salary
+Room Allocation Table
+
+Entity: Room
+Attributes: Room_ID, Room_Type, Patient_ID (FK), Availability_Status, Cost_Per_Day, Assigned_Doctor_ID (FK)
+Medical Test Table
+
+Entity: Medical_Test
+Attributes: Test_ID, Patient_ID (FK), Test_Name, Test_Result, Date_Conducted, Doctor_ID (FK)
+
+Relationships Between Entities:
+Patient is related to Appointment, Billing, Medical_Test, and Room.
+Doctor is related to Appointment and Medical_Test.
+Inventory_Item is independent but supports hospital operations like pharmacy or equipment.
+Staff helps manage hospital activities (administrative or operational).
